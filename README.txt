@@ -46,3 +46,4 @@ Click view timecard, enter pin,
 Page 3: admin login
 manage users
 
+
