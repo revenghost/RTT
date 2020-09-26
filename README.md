@@ -49,4 +49,6 @@ view timecards
 
 
 #### Installation: How to setup
+Install: Download or clone git repository
 Install: stuff in here
+
