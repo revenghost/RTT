@@ -15,5 +15,7 @@ var dateTime = date+' '+time;
  
 
 clockInBtn.addEventListener("click",alertSelected);
-clockOutBtn.addEventListener("click",alertSelected);
-// clockOutBtn.addEventListener("click",alertSelected("Clocked Out"));
+clockOutBtn.addEventListener("click", function() {
+    alertSelected("Clocked Out: ");
+});
+//clockOutBtn.addEventListener("click",alertSelected("Clocked Out"));
