@@ -28,7 +28,7 @@ CommandLine: gitbash
 5. start coding
 6. Hello World on screen
 
-
+KENNAS TEST
 
 #### Acceptance Criteria:
 3 pages
