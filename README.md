@@ -49,4 +49,4 @@ view timecards
 
 
 #### Installation: How to setup
-Install:
+Install: Download or clone git repository
