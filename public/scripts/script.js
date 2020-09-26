@@ -1,10 +1,17 @@
 
- let h1tag = document.getElementById("h1-tag");
+ let clockInBtn = document.getElementById("clockIn");
+ let clockOutBtn = document.getElementById("clockOut");
 
- h1tag.addEventListener("click",alertSelected);
 
- function alertSelected() {
-     alert("Hellow World");
- };
-     
  
+//  let currentdate = moment('2013-03-01', 'YYYY-MM-DD');
+ 
+ function alertSelected() {
+    // currentdate = moment().format("HH:mm");
+   // m = moment('2013-03-01', 'YYYY-MM-DD')
+    alert("Hello");
+};
+ 
+
+clockInBtn.addEventListener("click",alertSelected);
+clockOutBtn.addEventListener("click",alertSelected);
