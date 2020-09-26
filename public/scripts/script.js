@@ -14,6 +14,7 @@ var dateTime = date+' '+time;
 };
  
 
-clockInBtn.addEventListener("click",alertSelected);
+clockInBtn.addEventListener("click",function() {
+    alertSelected("Clocked in: ");
+});
 clockOutBtn.addEventListener("click",alertSelected);
-// clockOutBtn.addEventListener("click",alertSelected("Clocked Out"));
