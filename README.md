@@ -1,12 +1,12 @@
-#RMO Temp Timeclock
+# RMO Temp Timeclock
 
-####Frontend
+#### Frontend
 HTML
 CSS
 Vanilla JavaScript
 
 
-####Backend & Server
+#### Backend & Server
 Connection: NodeJS
 Routing: Express
 Admin Auth: Passport
@@ -14,7 +14,7 @@ Database: MongoDB
 Object Modeling (talks to DB): Mongoose
 
 
-####Tools:
+#### Tools:
 IDE: Visual Studio Code
 Version Control System: github
 CommandLine: gitbash
@@ -30,7 +30,7 @@ CommandLine: gitbash
 
 
 
-####Acceptance Criteria:
+#### Acceptance Criteria:
 3 pages
 Page 1: kiosk
 When End user enters pin then is shown:
@@ -48,5 +48,5 @@ manage users
 view timecards
 
 
-####Installation: How to setup
+#### Installation: How to setup
 Install:
