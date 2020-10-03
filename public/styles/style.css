@@ -24,7 +24,7 @@ html, body {
 
     .selected {
         
-        background-color: #2EE59D;
+        background-color: #00c073;
         color: #fff;
         pointer-events: none;
     }
