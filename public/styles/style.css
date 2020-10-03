@@ -6,12 +6,6 @@ html, body {
     text-align: center;
   }
   
-  /* .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
-  
   .button {
     width: 140px;
     height: 45px;
@@ -26,6 +20,13 @@ html, body {
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    }
+
+    .selected {
+        
+        background-color: #2EE59D;
+        color: #fff;
+        pointer-events: none;
     }
   
   .button:hover {
