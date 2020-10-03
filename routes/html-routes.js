@@ -9,7 +9,9 @@ app.get("/timeCard", function(req, res){
     res.sendFile(path.join(__dirname, "../public/pages/timeCard.html"));
 });
 
-
+app.get("/admin", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/pages/admin.html"));
+});
 
 
 
