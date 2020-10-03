@@ -1,4 +1,3 @@
 module.exports = {
-    timepunch: require("./timePunch.js")
-
+    timePunch: require("./timePunch.js")
 }
