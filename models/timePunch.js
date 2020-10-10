@@ -16,8 +16,7 @@ const TimePunch = new Schema({
         type: Number,
         // required: true,
         max: 4,
-        min: 4,
-        trim: true
+        min: 4
     },
     punchTime:{
         type: Date,

@@ -14,12 +14,12 @@ var dateTime = date+' '+time;
 };
  
 
-clockInBtn.addEventListener("click",function() {
-    alertSelected("Clocked in: ");
-});
-clockOutBtn.addEventListener("click", function() {
-    alertSelected("Clocked Out: ");
-});
+// clockInBtn.addEventListener("click",function() {
+//     alertSelected("Clocked in: ");
+// });
+// clockOutBtn.addEventListener("click", function() {
+//     alertSelected("Clocked Out: ");
+// });
 
 // autocomplete scripts below
 
