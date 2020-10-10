@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+
 mongoose.connect("mongodb+srv://RTTdbAdmin:JQu7FjCqqlnZDEuZ@cluster0.kvs7o.mongodb.net/RTTDB?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useFindAndModify: false,

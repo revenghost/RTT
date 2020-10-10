@@ -11,26 +11,67 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./styles/style.css">
-</br>  
-</br>
+  </br>
+  </br>
   <div class="btn pull-right">
-    <button class="button selected" href="index.html">TIME CLOCK</button>
-  </div>
-    <div class="btn pull-right">
-    <button class="button"href="pages/timeCard.html">VIEW TIMECARD</button>
+    <a href="/"><button class="button selected">TIME CLOCK</button></a>
   </div>
   <div class="btn pull-right">
-    <button class="button">ADMIN</button>
+    <a href="/timeCard"><button class="button">VIEW TIMECARD</button></a>
+  </div>
+  <div class="btn pull-right">
+    <a href="/admin"><button class="button">ADMIN</button></a>
   </div>
   <hr>
   <title>RTT</title>
 </head>
 </br>
+
 <body>
   <h1>Time Clock</h1>
   </br>
-  <button type="button" id="clockIn" class="btn btn-primary">Clock In</button>
-  <button type="button" id="clockOut" class="btn btn-secondary">Clock Out</button>
+
+  <br><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="Name" class="form-control" id="InputName" aria-describedby="InputName"
+              placeholder="Enter Name">
+          </div>
+          <div class="form-group">
+            <label for="InputPin">Pin</label>
+            <input type="password" class="form-control" id="InputPin" placeholder="Pin">
+          </div>
+          <br>
+          <button type="button" id="clockIn" class="btn btn-primary">Clock In</button>
+          <button type="button" id="clockOut" class="btn btn-secondary">Clock Out</button>
+        </form>
+      </div>
+      <div class="col-sm">
+        <h2>Autocomplete</h2>
+
+        <p>Start typing:</p>
+
+        <!--Make sure the form has the autocomplete function switched off:-->
+        <form autocomplete="off" action="/action_page.php">
+          <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Country">
+          </div>
+          <!-- <input type="submit"> -->
+          <!-- HOW TO autocompelete focus 1st result -->
+          <!-- https://www.tutorialspoint.com/jqueryui/jqueryui_autocomplete.htm -->
+        </form>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Optional JavaScript -->
   <script src="./scripts/script.js"></script>
