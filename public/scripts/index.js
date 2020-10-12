@@ -23,7 +23,7 @@ async function init(string) {
         userData.punchType = 1;
     };
     userData.userName = inputName.value;
-    userData.pin = inputPin.value;
+    userData.pin = parseInt(inputPin.value);
    // console.log(inputPin.value);
 
     // const jsonresp = 
