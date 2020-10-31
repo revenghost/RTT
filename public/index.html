@@ -11,8 +11,14 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" href="./media/57609_0.png"/>
 
    <img src="./media/9360f3e1-866a-453f-a2bf-69562ee530e1.png" alt="Logo">
+   <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+   rel = "stylesheet">
+ 
+
+   
 
 <!-- <body> -->
   <!-- <h1>Time Clock</h1> -->
@@ -22,39 +28,23 @@
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        
       </div>
       <div class="col-sm">
-
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input type="Name" class="form-control" id="InputName" aria-describedby="InputName"
-              placeholder="Enter Name">
-          </div>
+                <form>
+                  <div class = "form-group">
+                    <label for = "automplete-2">Name</label>
+                    <input id = "automplete-2" placeholder="Enter Name" class = "form-control" tabindex="1">
+                 </div>
           <div class="form-group">
             <label for="InputPin">Pin</label>
-            <input type="password" class="form-control" id="InputPin" placeholder="Pin">
+            <input type="password" class="form-control" id="InputPin" placeholder="Pin" tabindex="2">
           </div>
           <br>
-          <button type="button" id="clockIn" class="btn btn-primary">Clock In</button>
+          <button type="button" id="clockIn" class="btn btn-primary">Clock In </button>
           <button type="button" id="clockOut" class="btn btn-secondary">Clock Out</button>
         </form>
       </div>
       <div class="col-sm">
-        <h2>Autocomplete</h2>
-
-        <p>Start typing:</p> 
-
-        <!--Make sure the form has the autocomplete function switched off:-->
-        <form autocomplete="off" action="/action_page.php">
-          <div class="autocomplete" style="width:300px;">
-            <input id="myInput" type="text" name="myCountry" placeholder="Country">
-          </div>
-          <!-- <input type="submit"> -->
-          <!-- HOW TO autocompelete focus 1st result -->
-          <!-- https://www.tutorialspoint.com/jqueryui/jqueryui_autocomplete.htm -->
-        </form>
       </div>
     </div>
   </div>
@@ -65,15 +55,51 @@
   <script src="./scripts/api.js"></script>
   <script src="./scripts/index.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" -->
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" -->
+    <!-- crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+
+
+<script>
+  
+  $(function() {
+     var employeeNames = [
+        "Chelsea",
+        "Luis",
+        "Laura",
+        "Sam",
+        "Laurae",
+        "Jaime",
+        "Kenna",
+        "Andrew"
+     ];
+     $( "#automplete-2" ).autocomplete({
+        source: employeeNames,
+        autoFocus:true
+     });
+  });
+
+  $(document).on('keypress', 'input,select', function (e) {
+    if (e.which == 13) {
+        e.preventDefault();
+        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
+        // console.log($next.length);
+        if (!$next.length) {
+       $next = $('[tabIndex=1]');        }
+        $next.focus() .click();
+    }
+});
+</script>
+
+
 </body>
 
   </br></br></br>
