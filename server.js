@@ -6,6 +6,7 @@ mongoose.connect("mongodb+srv://RTTdbAdmin:JQu7FjCqqlnZDEuZ@cluster0.kvs7o.mongo
     useFindAndModify: false,
     useUnifiedTopology: true
 });
+
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.urlencoded({extended:true}));
