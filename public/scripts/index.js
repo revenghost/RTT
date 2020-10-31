@@ -17,10 +17,10 @@ clockOutBtn2.addEventListener("click", function() {
 async function init(string) {
     let userData = {};
     if(string === "ClockIn") {
-        userData.punchType = 0;
+        userData.punchType = "IN";
     }
     else if( string === "ClockOut") {
-        userData.punchType = 1;
+        userData.punchType = "OUT";
     };
     userData.userName = inputName.value;
     userData.pin = parseInt(inputPin.value);

@@ -4,17 +4,18 @@ const Schema = mongoose.Schema;
 const TimePunch = new Schema({
     punchType:{
         // 0 = Punch in, 1 = Punch out
-        type: Number,
-        // required: true
+        type: String,
+        enum:["IN","OUT"],
+        required: true
     },
     userName:{
         type: String,
-        // required: true,
+        required: true,
         trim: true
     },
     pin:{
         type: Number,
-        // required: true,
+        required: true,
         max: 4,
         min: 4
     },
