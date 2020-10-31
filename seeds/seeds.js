@@ -4,19 +4,20 @@ let db = require("../models");
 
 mongoose.connect("mongodb+srv://RTTdbAdmin:JQu7FjCqqlnZDEuZ@cluster0.kvs7o.mongodb.net/RTTDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 
-let workoutSeed = [
+let userSeed = [
   {
-    type: 1,
+    punchType: 1,
     userName: "Anthrax",
     pin: 1234,
   }
 ];
 
 db.timePunch.deleteMany({})
-  .then(() => db.timePunch.collection.insertMany(workoutSeed))
+  .then(() => db.timePunch.collection.insertMany(userSeed))
   .then(data => {
     console.log(JSON.stringify(data.result) + " records inserted!");
     process.exit(0);
