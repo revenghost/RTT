@@ -1,7 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const mongodburl = require("./authentication");
 
-mongoose.connect("mongodb+srv://RTTdbAdmin:JQu7FjCqqlnZDEuZ@cluster0.kvs7o.mongodb.net/RTTDB?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://"+mongodburl.credentials.username+":"+mongodburl.credentials.password+mongodburl.credentials.connectionurl, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true
