@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const mongodburl = require("./authentication");
+const mongodburl = require("./creds");
 
 mongoose.connect("mongodb+srv://"+mongodburl.credentials.username+":"+mongodburl.credentials.password+mongodburl.credentials.connectionurl, {
     useNewUrlParser: true,
