@@ -15,7 +15,7 @@ module.exports = function (app) {
 
     app.post("/api/users", function (req, res) {
         
-        db.timePunch.collection.insertOne(req.body)
+        db.timePunch.create(req.body)
         .then(data => {
             res.json(data);
         })

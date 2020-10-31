@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const TimePunch = new Schema({
+
+const TimePunch = new mongoose.Schema
+({
     punchType:{
         // 0 = Punch in, 1 = Punch out
         type: String,
@@ -16,14 +17,14 @@ const TimePunch = new Schema({
     pin:{
         type: Number,
         required: true,
-        max: 4,
-        min: 4
+        maxlength: 4,
+        minlength: 4
     },
     punchTime:{
         type: Date,
         default: new Date
     }
-});
+})
 
-const timePunchModel = mongoose.model("timePunches", TimePunch);
-module.exports = timePunchModel;
+module.exports = mongoose.model("timePunches", TimePunch);
+
