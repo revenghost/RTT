@@ -14,20 +14,22 @@ clockOutBtn2.addEventListener("click", function() {
    // console.log("you out");
 });
 
-async function init(string) {
+function init(string) {
     let userData = {};
     if(string === "ClockIn") {
-        userData.punchType = 0;
+        userData.punchType = "IN";
     }
     else if( string === "ClockOut") {
-        userData.punchType = 1;
+        userData.punchType = "OUT";
     };
     userData.userName = inputName.value;
     userData.pin = parseInt(inputPin.value);
+    // userData.buttface = "butt"
    // console.log(inputPin.value);
 
     // const jsonresp = 
-    await API.createUser(userData);
+ API.createUser(userData);
     // console.log(JSON.stringify(jsonresp)+" in der");
+
     
 };
