@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const TimePunch = new mongoose.Schema
 ({
     punchType:{
-        // 0 = Punch in, 1 = Punch out
         type: String,
         enum:["IN","OUT"],
         required: true
@@ -17,8 +16,8 @@ const TimePunch = new mongoose.Schema
     pin:{
         type: Number,
         required: true,
-        maxlength: 4,
-        minlength: 4
+        min: 1000,
+        max: 9999
     },
     punchTime:{
         type: Date,
