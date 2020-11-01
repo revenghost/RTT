@@ -11,16 +11,17 @@ mongoose.connect("mongodb+srv://"+mongodburl.credentials.username+":"+mongodburl
 
 let userSeed = [
   {
-    punchType: 1,
+    punchType: "IN",
     userName: "Anthrax",
-    pin: 1234,
+    pin: 1234
   }
 ];
 
+
 db.timePunch.deleteMany({})
-  .then(() => db.timePunch.collection.insertMany(userSeed))
+  .then(() => db.timePunch.create(userSeed))
   .then(data => {
-    console.log(JSON.stringify(data.result) + " records inserted!");
+    console.log("Seed records inserted!");
     process.exit(0);
   })
   .catch(err => {
