@@ -13,7 +13,7 @@ module.exports = function (app) {
             });
     });
 
-    app.post("/api/users", function (req, res) {
+    app.post("/api/punch", function (req, res) {
         
         db.timePunch.create(req.body)
         .then(data => {
@@ -22,5 +22,17 @@ module.exports = function (app) {
         .catch(err => {
             console.error(err);
         });
+});
+
+
+app.post("/api/users", function (req, res) {
+        
+    db.addUser.create(req.body)
+    .then(data => {
+        res.json(data);
+    })
+    .catch(err => {
+        console.error(err);
+    });
 });
 }

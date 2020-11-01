@@ -6,7 +6,19 @@ const API = {
     },
 
     
-    async createUser(data) {
+    async addPunch(data) {
+        const res = await fetch("/api/punch",
+            {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify(data)
+            }
+        );
+        const json = await res.json();
+        return json;
+    },
+
+    async addUser(data) {
         const res = await fetch("/api/users",
             {
                 method: "POST",
@@ -17,8 +29,6 @@ const API = {
         const json = await res.json();
         return json;
     }
-
-
 
 
 

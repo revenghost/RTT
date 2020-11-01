@@ -5,30 +5,29 @@ let inputName = document.getElementById("InputName");
 let inputPin = document.getElementById("InputPin");
 
 clockInBtn2.addEventListener("click",function() {
-    init("ClockIn");
+    userPunch("ClockIn");
    // console.log("you in");
 
 });
 clockOutBtn2.addEventListener("click", function() {
-    init("ClockOut");
+    userPunch("ClockOut");
    // console.log("you out");
 });
 
-function init(string) {
-    let userData = {};
+function userPunch(string) {
+    let userPunchData = {};
     if(string === "ClockIn") {
-        userData.punchType = "IN";
+        userPunchData.punchType = "IN";
     }
     else if( string === "ClockOut") {
-        userData.punchType = "OUT";
+        userPunchData.punchType = "OUT";
     };
-    userData.userName = inputName.value;
-    userData.pin = parseInt(inputPin.value);
-    // userData.buttface = "butt"
+    userPunchData.userName = inputName.value;
+    userPunchData.pin = parseInt(inputPin.value);
    // console.log(inputPin.value);
 
     // const jsonresp = 
- API.createUser(userData);
+    API.addPunch(userPunchData);
     // console.log(JSON.stringify(jsonresp)+" in der");
 
     
