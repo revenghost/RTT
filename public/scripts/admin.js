@@ -16,7 +16,7 @@ function addUser() {
    // console.log(inputPin.value);
 
     // const jsonresp = 
- API.addUser(addUserData);
+    API.addUser(addUserData);
     // console.log(JSON.stringify(jsonresp)+" in der");
 
     

@@ -15,14 +15,14 @@ const addUser = new Schema({
     pin:{
         type: Number,
         required: true,
-        max: 4,
-        min: 4
+        min: 1000,
+        max: 9999
     },
     EmployeeNumber:{
         type: Number,
         required: true,
-        max: 4,
-        min: 4
+        min: 1000,
+        max: 9999
     }
 });
 
