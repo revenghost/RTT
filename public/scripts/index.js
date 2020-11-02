@@ -30,12 +30,4 @@ function userPunch(string) {
     API.addPunch(userPunchData);
     // console.log(JSON.stringify(jsonresp)+" in der");
 
-// works to add user into DB
-// let userPunchData = {};
-// userPunchData.firstName = inputName.value;
-// userPunchData.lastName = inputName.value;
-// userPunchData.pin = parseInt(inputPin.value);
-// userPunchData.EmployeeNumber = parseInt(inputPin.value);
-// API.addUser(userPunchData);
-
 };

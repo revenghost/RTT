@@ -1,23 +1,20 @@
 
 let addUserBtn = document.getElementById("adduser");
-let inputName = document.getElementById("InputName");
-let inputPin = document.getElementById("InputPin");
+let firstname = document.getElementById("firstname");
+let lastname = document.getElementById("lastname");
+let pin = document.getElementById("pin");
+let employeeNumber = document.getElementById("employeeNumber");
 
-addUserBtn.addEventListener("click",function() {
-    addUser();
-    console.log("you in");
+function clearfields() {
+    document.getElementById("userForm").reset();
+}
 
-});
-
-function addUser() {
+function addUserFunction() {
     let addUserData = {};
-    addUserData.userName = inputName.value;
-    addUserData.pin = parseInt(inputPin.value);
-   // console.log(inputPin.value);
-
-    // const jsonresp = 
-    API.addUser(addUserData);
-    // console.log(JSON.stringify(jsonresp)+" in der");
-
-    
+    addUserData.firstName = firstname.value;
+    addUserData.lastName = lastname.value;
+    addUserData.pin = parseInt(pin.value);
+    addUserData.EmployeeNumber = parseInt(employeeNumber.value);
+    //clearfields(); 
+    API.addUser(addUserData);  
 };
