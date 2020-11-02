@@ -1,25 +1,27 @@
 
 let mongoose = require("mongoose");
 let db = require("../models");
+let mongodburl = require("../creds")
 
-mongoose.connect("mongodb+srv://RTTdbAdmin:JQu7FjCqqlnZDEuZ@cluster0.kvs7o.mongodb.net/RTTDB?retryWrites=true&w=majority", {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
+mongoose.connect("mongodb+srv://"+mongodburl.credentials.username+":"+mongodburl.credentials.password+mongodburl.credentials.connectionurl, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
 });
 
 let userSeed = [
   {
-    punchType: 1,
+    punchType: "IN",
     userName: "Anthrax",
-    pin: 1234,
+    pin: 1234
   }
 ];
 
+
 db.timePunch.deleteMany({})
-  .then(() => db.timePunch.collection.insertMany(userSeed))
+  .then(() => db.timePunch.create(userSeed))
   .then(data => {
-    console.log(JSON.stringify(data.result) + " records inserted!");
+    console.log("Seed records inserted!");
     process.exit(0);
   })
   .catch(err => {
