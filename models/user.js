@@ -15,16 +15,15 @@ const addUser = new Schema({
     pin:{
         type: Number,
         required: true,
-        max: 4,
-        min: 4
+        min: 1000,
+        max: 9999
     },
     EmployeeNumber:{
         type: Number,
         required: true,
-        max: 4,
-        min: 4
+        min: 1000,
+        max: 9999
     }
 });
 
-const addUserModel = mongoose.model("users", addUser);
-module.exports = addUserModel;
+module.exports = mongoose.model("users", addUser);
