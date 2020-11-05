@@ -63,14 +63,15 @@
 
   </br>
 
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <!-- Optional JavaScript -->
   <script src="./scripts/script.js"></script>
   <script src="./scripts/api.js"></script>
   <script src="./scripts/index.js"></script>
-  <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
+  
   <!-- old code? -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -86,34 +87,6 @@
 
   <script>
 
-    $(function () {
-      var employeeNames = [
-        "Chelsea",
-        "Luis",
-        "Laura",
-        "Sam",
-        "Laurae",
-        "Jaime",
-        "Kenna Groberg",
-        "Andrew Jensen"
-      ];
-      $("#InputName").autocomplete({
-        source: employeeNames,
-        autoFocus: true
-      });
-    });
-
-    $(document).on('keypress', 'input,select', function (e) {
-      if (e.which == 13) {
-        e.preventDefault();
-        var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
-        // console.log($next.length);
-        if (!$next.length) {
-          $next = $('[tabIndex=1]');
-        }
-        $next.focus().click();
-      }
-    });
   </script>
 
 </body>

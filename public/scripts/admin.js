@@ -15,6 +15,6 @@ function addUserFunction() {
     addUserData.lastName = lastname.value;
     addUserData.pin = parseInt(pin.value);
     addUserData.EmployeeNumber = parseInt(employeeNumber.value);
-    //clearfields(); 
-    API.addUser(addUserData);  
+    API.addUser(addUserData); 
+    // updateUsersVariable 
 };
