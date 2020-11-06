@@ -37,7 +37,6 @@ app.post("/api/users", function (req, res) {
 });
 
 app.get("/api/search", function (req, res) {
-        
     db.addUser.aggregate([ {
         "$search": {
             "autocomplete": {
@@ -51,11 +50,14 @@ app.get("/api/search", function (req, res) {
         }
     }])
     .then(data => {
-        //console.log(data);
-        res.json(data);
+        var employeeNames = [];
+        for (let i = 0; i < data.length; i++) {
+            employeeNames.push(data[i].firstName);
+        }
+        res.json(employeeNames);
     })
     .catch(err => {
-        console.log(err);
+        //console.log(err);
         console.error(err);
     });
 });

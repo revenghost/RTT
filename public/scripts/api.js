@@ -35,8 +35,6 @@ const API = {
             searchterm: data
         }));
         const json = await res.json();
-        console.log("LOGGING RES.JSON HERE");
-        console.log(json);
         return json;
     }
 
