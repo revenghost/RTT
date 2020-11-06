@@ -36,7 +36,29 @@ app.post("/api/users", function (req, res) {
     });
 });
 
-
+app.get("/api/search", function (req, res) {
+        
+    db.addUser.aggregate([ {
+        "$search": {
+            "autocomplete": {
+                "query": req.query.searchterm,
+                "path": "firstName",
+                "fuzzy": {
+                    "maxEdits": 2,
+                    "prefixLength": 2
+                }
+            }
+        }
+    }])
+    .then(data => {
+        //console.log(data);
+        res.json(data);
+    })
+    .catch(err => {
+        console.log(err);
+        console.error(err);
+    });
+});
 
 
 }

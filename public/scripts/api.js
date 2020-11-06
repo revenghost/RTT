@@ -28,6 +28,16 @@ const API = {
         );
         const json = await res.json();
         return json;
+    },
+
+    async searchUser(data) {
+        const res = await fetch("/api/search?" + new URLSearchParams({
+            searchterm: data
+        }));
+        const json = await res.json();
+        console.log("LOGGING RES.JSON HERE");
+        console.log(json);
+        return json;
     }
 
 

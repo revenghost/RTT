@@ -3,7 +3,7 @@ let clockInBtn2 = document.getElementById("clockIn");
 let clockOutBtn2 = document.getElementById("clockOut");
 let inputName = document.getElementById("InputName");
 let inputPin = document.getElementById("InputPin");
-
+let inputName2 = document.getElementById("InputName2");
 clockInBtn2.addEventListener("click",function() {
     userPunch("ClockIn");
    // console.log("you in");
@@ -33,9 +33,38 @@ function userPunch(string) {
 };
 
 
+function searchUserFunction() {
+    console.log("HEY");
+    var newonehere = inputName2.value; 
+    API.searchUser(newonehere);
+};
+
+
 
 
 // https://github.com/VassilisPallas/mongoose-fuzzy-searching
+
+// db.users.aggregate([
+//     {
+//       $search: {
+//         "text": {
+//           "query": "Andrew",
+//           "path": "firstName"
+//         }
+//       }
+//     },
+//     {
+//       $limit: 5
+//     },
+//     {
+//       $project: {
+//         "_id": 0,
+//         "firstName": 1,
+//         "lastName": 1,
+//         "pin": 1
+//       }
+//     }
+//   ])
 
     $(function () {
       var employeeNames = [
