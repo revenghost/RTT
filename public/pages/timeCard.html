@@ -5,12 +5,16 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  <link rel="icon" href="../media/favicon.png" />
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <!-- Custom CSS -->
+    <!-- Custom CSS -->
   <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+<body>
+  <!-- Header Logo and Buttons -->
   <img src="./media/RMOlogo.png" alt="Logo">
   </br>
   </br>
@@ -25,23 +29,52 @@
   </div>
   <hr>
   <title>RTT</title>
-</head>
-</br>
-
-<body>
   <h1>TimeCard</h1>
   </br>
   <div class="container">
     <div class="row">
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        <button type="button" id="TimecardView" class="btn btn-primary">View your Timecard</button>
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
+      <div style="margin: auto;"> 
+        <button type="button" class="btn btn-primary">
+          <span> &#171;</span>
+          </button>
+        <button type="button" id="TimecardView" class="btn btn-primary"><b>Current Week</b></button>
+        <button type="button" class="btn btn-primary">
+          <span> &#187;</span>
+          </button>
+
+        </div>
+      </br></br></br>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Clock in</th>
+            <th scope="col">Clock out</th>
+            <th scope="col">Total time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 

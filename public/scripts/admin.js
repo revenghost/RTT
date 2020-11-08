@@ -5,6 +5,7 @@ let lastname = document.getElementById("lastname");
 let pin = document.getElementById("pin");
 let employeeNumber = document.getElementById("employeeNumber");
 
+
 function clearfields() {
     document.getElementById("userForm").reset();
 }
@@ -15,6 +16,7 @@ function addUserFunction() {
     addUserData.lastName = lastname.value;
     addUserData.pin = parseInt(pin.value);
     addUserData.EmployeeNumber = parseInt(employeeNumber.value);
-    //clearfields(); 
-    API.addUser(addUserData);  
+    API.addUser(addUserData);
 };
+
+

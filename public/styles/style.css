@@ -40,6 +40,12 @@ html, body {
     transform: translateY(-1px);
   }
 
+button span{
+  line-height: 0px;
+  font-size: 50px;
+  vertical-align:-8px
+}
+
   /* autocomplete css below */
   
 * {
@@ -102,4 +108,8 @@ input[type=submit] {
 .autocomplete-active {
   background-color: DodgerBlue !important; 
   color: #ffffff; 
+}
+
+table {
+  background-color: #ffffff;
 }
