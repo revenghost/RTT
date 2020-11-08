@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = function (app) {
 
     app.get("/api/users", function (req, res) {
-        db.timePunch.find({})
+        db.addUser.find({})
             .then(data => {
                 res.json(data);
                 console.log(data);
@@ -35,6 +35,8 @@ app.post("/api/users", function (req, res) {
         console.error(err);
     });
 });
+
+// app.delete("/api/deleteUser")
 
 app.get("/api/search", function (req, res) {
     db.addUser.aggregate([ {
