@@ -28,8 +28,8 @@ let userSeed = [
 ];
 
 
-db.timePunch.deleteMany({})
-  .then(() => db.timePunch.create(userSeed))
+db.TimePunch.deleteMany({})
+  .then(() => db.TimePunch.create(userSeed))
   .then(data => {
     console.log("Seed records inserted!");
     process.exit(0);

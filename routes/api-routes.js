@@ -15,7 +15,7 @@ module.exports = function (app) {
     // });
 
     app.get("/api/manageusers", function (req, res) {
-        db.addUser.find({})
+        db.User.find({})
             .then(data => {
                 var employeeNames = [];
                 for (let i = 0; i < data.length; i++) {
@@ -30,7 +30,7 @@ module.exports = function (app) {
 
     app.post("/api/punch", function (req, res) {
         
-        db.timePunch.create(req.body)
+        db.TimePunch.create(req.body)
         .then(data => {
             res.json(data);
         })
@@ -42,7 +42,7 @@ module.exports = function (app) {
 
 app.post("/api/users", function (req, res) {
         
-    db.addUser.create(req.body)
+    db.User.create(req.body)
     .then(data => {
         res.json(data);
     })
@@ -54,7 +54,7 @@ app.post("/api/users", function (req, res) {
 // app.delete("/api/deleteUser")
 
 app.get("/api/search", function (req, res) {
-    db.addUser.aggregate([ {
+    db.User.aggregate([ {
         "$search": {
             "autocomplete": {
                 "query": req.query.searchterm,
