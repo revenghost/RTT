@@ -11,25 +11,25 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/adminstyle.css">  
-  
+  <link rel="stylesheet" href="../styles/adminstyle.css">
+
 </head>
 
 <body>
-<!-- Header Logo and Buttons -->
-<img src="../media/RMOlogo.png" alt="Logo">
-</br>
-</br>
-<div class="btn pull-right">
-  <a href="/"><button class="button">TIME CLOCK</button></a>
-</div>
-<div class="btn pull-right">
-  <a href="/timeCard"><button class="button">VIEW TIMECARD</button></a>
-</div>
-<div class="btn pull-right">
-  <a href="/admin"><button class="button selected">ADMIN</button></a>
-</div>
-<hr>
+  <!-- Header Logo and Buttons -->
+  <img src="../media/RMOlogo.png" alt="Logo">
+  </br>
+  </br>
+  <div class="btn pull-right">
+    <a href="/"><button class="button">TIME CLOCK</button></a>
+  </div>
+  <div class="btn pull-right">
+    <a href="/timeCard"><button class="button">VIEW TIMECARD</button></a>
+  </div>
+  <div class="btn pull-right">
+    <a href="/admin"><button class="button selected">ADMIN</button></a>
+  </div>
+  <hr>
   <h2>Admin Page</h2>
   <title>RTT Admin</title>
   <p>Need to be able to see/add/delete users as well as all the punches. Need to be able to adjust punches
@@ -42,10 +42,12 @@
       </div>
       <div class="col-sm">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">Add New User</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddNewUserModal">Add New
+          User</button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <!-- Add New User Modal -->
+        <div class="modal fade" id="AddNewUserModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+          aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -56,11 +58,13 @@
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="firstname"><b>Firstname:</b></label>
-                      <input id="firstname" class="form-control" type="text" placeholder="Enter Firstname" name="firstname" required>
+                      <input id="firstname" class="form-control" type="text" placeholder="Enter Firstname"
+                        name="firstname" required>
                     </div>
                     <div class="form-group col-md-6">
                       <label for=" lastname"><b>Lastname:</b></label>
-                      <input id="lastname" class="form-control" type="text" placeholder="Enter Lastname" name="lastname" required>
+                      <input id="lastname" class="form-control" type="text" placeholder="Enter Lastname" name="lastname"
+                        required>
                     </div>
                   </div>
                   <div class="form-row">
@@ -70,26 +74,122 @@
                     </div>
                     <div class="form-group col-md-6">
                       <label for="employeeNumber"><b>Employee Number:</b></label>
-                      <input id="employeeNumber" class="form-control" type="text"
-                          placeholder="Enter EN" name="employeeNumber" required="true">
+                      <input id="employeeNumber" class="form-control" type="text" placeholder="Enter EN"
+                        name="employeeNumber" required="true">
                     </div>
                   </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal"
                     onclick="clearfields()">Cancel</button>
-                  <button id="adduser" type="submit" class="btn btn-primary"
-                    onclick="addUserFunction()">Add User</button>
+                  <button id="adduser" type="submit" class="btn btn-primary" onclick="addUserFunction()">Add
+                    User</button>
                 </form>
 
               </div>
             </div>
           </div>
         </div>
-        <!-- Button trigger modal -->
-        <br><br><br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal" onclick="searchUserFunction()">search User</button>
 
+
+        <div class="container">
+          <div class="row">
+            <div style="margin: auto;"> 
+              <button type="button" class="btn btn-primary">
+                <span> &#171;</span>
+                </button>
+              <button type="button" id="TimecardView" class="btn btn-primary"><b>Current Week</b></button>
+              <button type="button" class="btn btn-primary">
+                <span> &#187;</span>
+                </button>
+
+                <button type="button" id="TimecardView" class="btn btn-primary" onclick="adminManageUsers()"><b>GET Week</b></button>
+              
+              </div>
+            </br></br></br>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Start Date</th>
+                  <th scope="col">Edit</th>
+                  <th scope="col">Offboard</th>
+                  <th scope="col">Timecard</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Kenna Groberg</th>
+                  <td>11/01/2020</td>
+                  <td>E</td>
+                  <td>D</td>
+                  <td>V</td>
+                  <td>V</td>
+                </tr>
+                <tr>
+                  <th scope="row">Andrew Jensen</th>
+                  <td>10/21/2020</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Christohper Vincent</th>
+                  <td>8/5/2019</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Sam Greilick</th>
+                  <td>1/5/2001</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+      
+          </div>
+        </div>
       </div>
       <div class="col-sm">
       </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+            <th scope="col">View Timecard</th>
+            <th scope="col">Add Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Kenna Groberg</td>
+            <td>Edit</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
