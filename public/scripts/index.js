@@ -49,38 +49,3 @@ function popup(apiuserresults) {
         autoFocus: true
     });
 };
-
-
-
-   // old autocomplete code, needs to be deleted once new one is done
-//  $(function () {
-//       var employeeNames = [
-//         "Chelsea",
-//         "Luis",
-//         "Laura",
-//         "Sam",
-//         "Laurae",
-//         "Jaime",
-//         "Kenna Groberg",
-//         "Andrew Jensen"
-//       ];
-//       $("#InputName").autocomplete({
-//         source: employeeNames,
-//         autoFocus: true
-//       });
-//     });
-
-// wat is this?
-    // $(document).on('keypress', 'input,select', function (e) {
-    //   if (e.which == 13) {
-    //     e.preventDefault();
-    //     var $next = $('[tabIndex=' + (+this.tabIndex + 1) + ']');
-    //     // console.log($next.length);
-    //     if (!$next.length) {
-    //       $next = $('[tabIndex=1]');
-    //     }
-    //     $next.focus().click();
-    //   }
-    // });
-
-

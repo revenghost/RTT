@@ -5,6 +5,12 @@ const API = {
         return json;
     },
 
+    async manageUsers() {
+        const res = await fetch("/api/manageusers");
+        const json = await res.json();
+        return json;
+    },
+
     
     async addPunch(data) {
         const res = await fetch("/api/punch",

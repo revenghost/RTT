@@ -2,11 +2,26 @@ const db = require("../models");
 
 module.exports = function (app) {
 
-    app.get("/api/users", function (req, res) {
+    // comment out when out of development
+    // app.get("/api/users", function (req, res) {
+    //     db.addUser.find({})
+    //         .then(data => {
+    //             res.json(data);
+    //             //console.log(data);
+    //         })
+    //         .catch(err => {
+    //             console.error(err);
+    //         });
+    // });
+
+    app.get("/api/manageusers", function (req, res) {
         db.addUser.find({})
             .then(data => {
-                res.json(data);
-                console.log(data);
+                var employeeNames = [];
+                for (let i = 0; i < data.length; i++) {
+                    employeeNames.push(data[i].firstName);
+                }
+                res.json(employeeNames);
             })
             .catch(err => {
                 console.error(err);

@@ -14,6 +14,16 @@ let userSeed = [
     punchType: "IN",
     userName: "Anthrax",
     pin: 1234
+  },
+  {
+    punchType: "IN",
+    userName: "Anthrax",
+    pin: 1234
+  },
+  {
+    punchType: "IN",
+    userName: "Anthrax",
+    pin: 1234
   }
 ];
 
