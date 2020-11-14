@@ -12,12 +12,19 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../styles/style.css">
   <link rel="stylesheet" href="../styles/adminstyle.css">
+  
+  <div class="logo">
+    <img src="../media/RMOlogo.png" class="desktop">
+    <img src="../media/RMOLogoStacked.svg" class="mobile">
+  </div>
 
 </head>
 
 <body>
-  <!-- Header Logo and Buttons -->
-  <img src="../media/RMOlogo.png" alt="Logo">
+
+
+
+
   </br>
   </br>
   <div class="btn pull-right">
@@ -30,20 +37,11 @@
     <a href="/admin"><button class="button selected">ADMIN</button></a>
   </div>
   <hr>
-  <h2>Admin Page</h2>
+  <h2>ADMIN</h2>
   <title>RTT Admin</title>
-  <p>Need to be able to see/add/delete users as well as all the punches. Need to be able to adjust punches
-    <br><br>
-    See totaling times for everyone each week
   </p>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddNewUserModal">Add New
-          User</button>
+       
 
         <!-- Add New User Modal -->
         <div class="modal fade" id="AddNewUserModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
@@ -93,105 +91,74 @@
         <div class="container">
           <div class="row">
             <div style="margin: auto;"> 
-              <button type="button" class="btn btn-primary">
-                <span> &#171;</span>
-                </button>
-              <button type="button" id="TimecardView" class="btn btn-primary"><b>Current Week</b></button>
-              <button type="button" class="btn btn-primary">
-                <span> &#187;</span>
-                </button>
-
-                <button type="button" id="TimecardView" class="btn btn-primary" onclick="adminManageUsers()"><b>GET Week</b></button>
-              
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddNewUserModal">Add New User</button>
+              <button type="button" id="TimecardView" class="btn btn-primary" onclick="adminManageUsers()">Get Users</button>
+              <button type="button" id="TimecardView" class="btn btn-primary" onclick="adminManageUsers()">Export Week</button>
               </div>
-            </br></br></br>
-            <table class="table table-striped">
+            </div>
+
+            </br></br>
+
+            <div class="table-responsive">
+            <table class="table table-hover table-sm">
               <thead>
-                <tr>
+                <tr class="table-active">
                   <th scope="col">Name</th>
                   <th scope="col">Start Date</th>
-                  <th scope="col">Edit</th>
-                  <th scope="col">Offboard</th>
-                  <th scope="col">Timecard</th>
-                  <th scope="col">Notes</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Last Punch</th>
+                  <th scope="col">Actions</th>
+                  <!-- <th scope="col"></th> -->
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="">
+                  <th scope="row">Kenna Groberg is the smarted hottest cooler ever</th>
+                  <td>11/01/2020</td>
+                  <td><img width="24px" src="././media/AdminPage/in.png" alt="ClockedIn"></td>
+                  <td>9:40PM</td>
+                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
+                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
+                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
+                </tr>
+                <tr class="">
                   <th scope="row">Kenna Groberg</th>
                   <td>11/01/2020</td>
-                  <td>E</td>
-                  <td>D</td>
-                  <td>V</td>
-                  <td>V</td>
+                  <td><img width="24px" src="././media/AdminPage/out.png" alt="ClockedOut"></td>
+                  <td>9:40PM</td>
+                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
+                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
+                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
                 </tr>
-                <tr>
-                  <th scope="row">Andrew Jensen</th>
-                  <td>10/21/2020</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <tr class="">
+                  <th scope="row">Kenna Groberg</th>
+                  <td>11/01/2020</td>
+                  <td><img width="24px" src="././media/AdminPage/in.png" alt="ClockedIn"></td>
+                  <td>9:40PM</td>
+                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
+                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
+                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
                 </tr>
-                <tr>
-                  <th scope="row">Christohper Vincent</th>
-                  <td>8/5/2019</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">Sam Greilick</th>
-                  <td>1/5/2001</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                <tr class="">
+                  <th scope="row">Kenna Groberg</th>
+                  <td>11/01/2020</td>
+                  <td><img width="24px" src="././media/AdminPage/in.png" alt="ClockedIn"></td>
+                  <td>9:40PM</td>
+                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
+                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
+                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
                 </tr>
               </tbody>
             </table>
-      
           </div>
+            
+         
         </div>
-      </div>
-      <div class="col-sm">
-      </div>
-
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-            <th scope="col">View Timecard</th>
-            <th scope="col">Add Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Kenna Groberg</td>
-            <td>Edit</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+   
 
 
   <!-- Optional JavaScript -->
