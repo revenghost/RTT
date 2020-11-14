@@ -1,3 +1,18 @@
+  /* hide mobile version by default */
+  .logo .mobile {
+    display: none;
+  }
+  /* when screen is less than 600px wide
+     show mobile version and hide desktop */
+  @media (max-width: 600px) {
+    .logo .mobile {
+      display: block;
+    }
+    .logo .desktop {
+      display: none;
+    }
+  }
+
 h1{
     color: black;
   
@@ -6,7 +21,7 @@ html, body {
     height: 100%;
     text-align: center;
     background: linear-gradient(rgb(250, 205, 205), rgb(245, 237, 163));
-    
+    background-attachment: fixed;
   }
   
   
@@ -112,4 +127,8 @@ input[type=submit] {
 
 table {
   background-color: #ffffff;
+}
+
+.nopadding {
+  padding: 0;
 }

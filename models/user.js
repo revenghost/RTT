@@ -23,6 +23,18 @@ const User = new Schema({
         required: true,
         min: 1000,
         max: 9999
+    },
+    agency:{
+        type: String
+    },
+    startDate:{
+        type: Date,
+        required:true
+    },
+    active:{
+        type: Boolean,
+        required: true,
+        default: true
     }
 });
 
