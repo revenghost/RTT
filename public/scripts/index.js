@@ -2,8 +2,11 @@
 
 let clockInBtn2 = document.getElementById("clockIn");
 let clockOutBtn2 = document.getElementById("clockOut");
+let viewTimecardBtn = document.getElementById("viewTimecardBtn");
 let inputName = document.getElementById("InputName");
 let inputPin = document.getElementById("InputPin");
+let TimePunchPopupMessage = document.getElementById("TimePunchPopupMessage");
+let TimePunchPopupMessageTitle = document.getElementById("TimePunchPopupMessageTitle");
 
 clockInBtn2.addEventListener("click", function () {
     userPunchValidation("ClockIn");
@@ -11,67 +14,23 @@ clockInBtn2.addEventListener("click", function () {
 clockOutBtn2.addEventListener("click", function () {
     userPunchValidation("ClockOut");
 });
+viewTimecardBtn.addEventListener("click", function () {
+    userPunchValidation("viewTimecard");
+});
 
-function userPunchValidation(clockInOrOut){
-    var InputName = document.getElementById("InputName").value;
-    var InputPin = document.getElementById("InputPin").value;
-    if(InputName.length>0){
-        if(InputPin.match(/^\d{4}$/)) {
-            userPunch(clockInOrOut);
-        } 
-        else{
-            TimePunchPopupMessage.innerHTML = "Timepunch Failed: Check your Name and Pin. <br>Front end: invalid Pin";
-            $("#modal-TimePunch").modal('show');
-        }
-    }
-    else{
-        TimePunchPopupMessage.innerHTML = "Timepunch Failed: Check your Name and Pin. <br>Front end: Invalid Name";
-        $("#modal-TimePunch").modal('show');
-    }
-}
-function userPunch(clockInOrOut) {
-    let userPunchData = {};
-    if (clockInOrOut === "ClockIn") {
-        userPunchData.punchType = "IN";
-    }
-    else if (clockInOrOut === "ClockOut") {
-        userPunchData.punchType = "OUT";
-    };
-    userPunchData.firstName = inputName.value;
-    userPunchData.pin = parseInt(inputPin.value);
-    const timeElapsed = Date.now();
-    const today = new Date(timeElapsed);
-    today.toISOString(); // "2020-06-13T18:30:00.000Z"
-    userPunchData.punchTime = today.toISOString();
+function resetformlogin() {
+    document.getElementById("TimePunchForm").reset();
+};
 
-    API.addPunch(userPunchData).then((results) => {
-        // let addPunchResults = results;
-        // console.log(results);
-        var TimePunchPopupMessage = document.getElementById("TimePunchPopupMessage");
-        if (results === "TimePunchSuccess") {
-            document.getElementById("TimePunchForm").reset();
-            if (clockInOrOut === "ClockIn") {
-                TimePunchPopupMessage.innerHTML = "Clocked In";
-            }
-            else if (clockInOrOut === "ClockOut") {
-                TimePunchPopupMessage.innerHTML = "Clocked Out";
-            };
-        }
-        else if (results === "TimePunchFailed") {
-            TimePunchPopupMessage.innerHTML = "Timepunch Failed: Check your Name and Pin. Back end";
-        };
-
-        $("#modal-TimePunch").modal('show');
-    })
-        .catch((err) => {
-            console.log(err);
-            console.log("index.js api.addpunch .catch");
-        });
-
+function loadViewTimecardPage() {
+    // console.log("yay");
+    sessionStorage.setItem("inputName", inputName.value);
+    sessionStorage.setItem("inputPin", inputPin.value);
+    window.location.href = "/timeCard";
 };
 
 function searchUserFunction() {
-    var userSearchTextInput = inputName.value;
+    let userSearchTextInput = inputName.value;
     if (userSearchTextInput.length > 1) {
         //console.log(userSearchTextInput.length);
         API.searchUser(userSearchTextInput).then((results) => {

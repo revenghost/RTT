@@ -22,6 +22,10 @@ input[type=date] {
     padding-left: 20%;
 }
 
+.no-focus-outline:focus {
+   box-shadow: none;
+}
+
 /* .labels {
     text-align: right; 
     vertical-align: middle;

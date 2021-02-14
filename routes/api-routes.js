@@ -17,11 +17,17 @@ module.exports = function (app) {
     app.get("/api/manageusers", function (req, res) {
         db.User.find({})
             .then(data => {
-                var employeeNames = [];
-                for (let i = 0; i < data.length; i++) {
-                    employeeNames.push(data[i].firstName);
+            //     var employeeInfo = [];
+            //     for (let i = 0; i < data.length; i++) {
+            //         employeeInfo.push(data[i].firstName);
+            //         employeeInfo.push(data[i].lastName);
+            //         employeeInfo.push(data[i].startDate);
+            
+            var employeeInfo = new Array();
+            for (let i = 0; i < data.length; i++) {
+                employeeInfo[i] = new Array(data[i].firstName, data[i].lastName, data[i].startDate, data[i].pin);
                 }
-                res.json(employeeNames);
+                res.json(employeeInfo);
             })
             .catch(err => {
                 console.error(err);
@@ -71,11 +77,11 @@ app.get("/api/search", function (req, res) {
         }
     }])
     .then(data => {
-        var employeeNames = [];
+        var employeeInfo = [];
         for (let i = 0; i < data.length; i++) {
-            employeeNames.push(data[i].firstName);
+            employeeInfo.push(data[i].firstName);
         }
-        res.json(employeeNames);
+        res.json(employeeInfo);
     })
     .catch(err => {
         //console.log(err);

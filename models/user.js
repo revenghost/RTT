@@ -18,7 +18,7 @@ const User = new Schema({
         min: 1000,
         max: 9999
     },
-    EmployeeNumber:{
+    employeeNumber:{
         type: Number,
         required: true,
         min: 1000,
@@ -35,6 +35,11 @@ const User = new Schema({
         type: Boolean,
         required: true,
         default: true
+    },
+    admin:{
+        type: Boolean,
+        required: true,
+        default: false
     }
 });
 
