@@ -172,4 +172,8 @@ table {
   text-decoration: none;
   cursor: pointer;
 }
+
+.TimePunchPopupMessage {
+  margin: auto;
+}
 /* FINISH: Timepunch Modal Styles */

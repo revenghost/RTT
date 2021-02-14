@@ -8,8 +8,8 @@
   <link rel="icon" href="./media/favicon.png" />
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./styles/style.css">
   <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
@@ -32,14 +32,14 @@
           <div class="form-group">
             <label for="InputName">Name</label>
             <input id="InputName" placeholder="Enter Name" class="form-control" tabindex="1"
-              onkeyup="searchUserFunction()">
+              onkeyup="searchUserFunction()" required="true">
           </div>
           <div class="form-group">
             <label for="InputPin">Pin</label>
-            <input type="password" class="form-control" id="InputPin" placeholder="Pin" tabindex="2">
+            <input type="password" class="form-control" id="InputPin" placeholder="Pin" tabindex="2" required>
           </div>
           <br>
-          <button type="button" id="clockIn" class="btn btn-primary">Clock In </button>
+          <button type="button" id="clockIn" class="btn btn-primary">Clock In</button>
           <button type="button" id="clockOut" class="btn btn-secondary">Clock Out</button>
         </form>
       </div>
@@ -61,16 +61,36 @@
 </div> -->
   <hr>
 
-  <!-- The Modal -->
-<div id="modal-TimePunch" class="modal-TimePunch">
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-TimePunch">Add New User</button> -->
 
-  <!-- Modal content -->
-  <div class="modal-content-TimePunch">
-    <span class="close-TimePunch">&times;</span>
-    <span id="TimePunchPopupMessage" class="TimePunchPopupMessage">Default Text here: Shouldn't See this</span>
+  <!-- Add New User Modal -->
+  <div class="modal fade" id="modal-TimePunch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title w-100" id="ModalLabel" style="font-weight: bold">Error</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="userForm"">
+            <div class="form-row">
+                <span id="TimePunchPopupMessage" class="TimePunchPopupMessage">Default Text here: Shouldn't See this</span>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
+
+
+
+
+
 
 
 
@@ -80,6 +100,13 @@
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <!-- Jquery & Bootstrap -->
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
   <!-- Optional JavaScript -->
   <script src="./scripts/script.js"></script>
   <script src="./scripts/api.js"></script>

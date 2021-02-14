@@ -7,7 +7,7 @@ const TimePunch = new mongoose.Schema
         enum:["IN","OUT"],
         required: true
     },
-    userName:{
+    firstName:{
         type: String,
         required: true,
         trim: true

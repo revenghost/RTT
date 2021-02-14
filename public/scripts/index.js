@@ -6,13 +6,29 @@ let inputName = document.getElementById("InputName");
 let inputPin = document.getElementById("InputPin");
 
 clockInBtn2.addEventListener("click", function () {
-    userPunch("ClockIn");
-
+    userPunchValidation("ClockIn");
 });
 clockOutBtn2.addEventListener("click", function () {
-    userPunch("ClockOut");
+    userPunchValidation("ClockOut");
 });
 
+function userPunchValidation(clockInOrOut){
+    var InputName = document.getElementById("InputName").value;
+    var InputPin = document.getElementById("InputPin").value;
+    if(InputName.length>0){
+        if(InputPin.match(/^\d{4}$/)) {
+            userPunch(clockInOrOut);
+        } 
+        else{
+            TimePunchPopupMessage.innerHTML = "Timepunch Failed: Check your Name and Pin. <br>Front end: invalid Pin";
+            $("#modal-TimePunch").modal('show');
+        }
+    }
+    else{
+        TimePunchPopupMessage.innerHTML = "Timepunch Failed: Check your Name and Pin. <br>Front end: Invalid Name";
+        $("#modal-TimePunch").modal('show');
+    }
+}
 function userPunch(clockInOrOut) {
     let userPunchData = {};
     if (clockInOrOut === "ClockIn") {
@@ -21,7 +37,7 @@ function userPunch(clockInOrOut) {
     else if (clockInOrOut === "ClockOut") {
         userPunchData.punchType = "OUT";
     };
-    userPunchData.userName = inputName.value;
+    userPunchData.firstName = inputName.value;
     userPunchData.pin = parseInt(inputPin.value);
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
@@ -42,10 +58,10 @@ function userPunch(clockInOrOut) {
             };
         }
         else if (results === "TimePunchFailed") {
-            TimePunchPopupMessage.innerHTML = "Timepunch failed: Check your Name and Pin.";
+            TimePunchPopupMessage.innerHTML = "Timepunch Failed: Check your Name and Pin. Back end";
         };
 
-        modal.style.display = "block";
+        $("#modal-TimePunch").modal('show');
     })
         .catch((err) => {
             console.log(err);
@@ -79,17 +95,17 @@ function popup(apiuserresults) {
 
 /* START: Timepunch Modal JS */
 // Get the modal
-var modal = document.getElementById("modal-TimePunch");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close-TimePunch")[0];
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// var modal = document.getElementById("modal-TimePunch");
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close-TimePunch")[0];
+// // When the user clicks on <span> (x), close the modal
+// // span.onclick = function() {
+// //   modal.style.display = "none";
+// // }
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
 /* FINISH: Timepunch Modal JS */
