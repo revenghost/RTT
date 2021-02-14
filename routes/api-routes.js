@@ -32,10 +32,14 @@ module.exports = function (app) {
         
         db.TimePunch.create(req.body)
         .then(data => {
-            res.json(data);
+            // console.log("TimePunchSuccess");
+            // res.json(data);
+            res.json("TimePunchSuccess");
         })
         .catch(err => {
-            console.error(err);
+            // console.error(err);
+            // console.error("TimePunchFailed");
+            res.json("TimePunchFailed");
         });
 });
 

@@ -14,8 +14,12 @@
     text-align: center; 
  }
 
-input[type=text] { 
+ input[type=text] { 
+   text-align: center; 
+}
+input[type=date] { 
     text-align: center; 
+    padding-left: 20%;
 }
 
 /* .labels {

@@ -52,40 +52,108 @@
                 <h5 class="modal-title w-100" id="ModalLabel" style="font-weight: bold">Add User</h5>
               </div>
               <div class="modal-body">
-                <form id="userForm">
+                <form id="userForm" onsubmit="return addUserFunction()">
                   <div class="form-row">
                     <div class="form-group col-md-6">
-                      <label for="firstname"><b>Firstname:</b></label>
-                      <input id="firstname" class="form-control" type="text" placeholder="Enter Firstname"
+                      <label for="firstname"><b>First Name:</b></label>
+                      <input id="firstname" class="form-control" type="text" placeholder="Enter First Name"
                         name="firstname" required>
                     </div>
                     <div class="form-group col-md-6">
-                      <label for=" lastname"><b>Lastname:</b></label>
-                      <input id="lastname" class="form-control" type="text" placeholder="Enter Lastname" name="lastname"
+                      <label for=" lastname"><b>Last Name:</b></label>
+                      <input id="lastname" class="form-control" type="text" placeholder="Enter Last Name" name="lastname"
                         required>
                     </div>
                   </div>
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="pin"><b>Pin:</b></label>
-                      <input id="pin" class="form-control" type="text" placeholder="Enter Pin" name="pin" required>
+                      <input id="pin" class="form-control" type="text" maxlength="4" pattern="\d{4}" 
+                      oninvalid="this.setCustomValidity('Must be 4 numbers!')"
+                      oninput="this.setCustomValidity('')"
+                      placeholder="4 Digit Pin" name="pin" required>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="employeeNumber"><b>Employee Number:</b></label>
-                      <input id="employeeNumber" class="form-control" type="text" placeholder="Enter EN"
+                      <input id="employeeNumber" class="form-control" type="text" maxlength="4" pattern="\d{4}" 
+                      oninvalid="this.setCustomValidity('Must be 4 numbers.')"
+                      oninput="this.setCustomValidity('')"
+                      placeholder="4 Digit Number"
                         name="employeeNumber" required="true">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6" style="margin: auto; padding-bottom: 16px;">
+                      <label for="startDate"><b>Start Date:</b></label>
+                      <input id="startDate" class="form-control" type="date" placeholder="Enter Start Date"
+                        name="startDate" required="true">
                     </div>
                   </div>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal"
                     onclick="clearfields()">Cancel</button>
-                  <button id="adduser" type="submit" class="btn btn-primary" onclick="addUserFunction()">Add
-                    User</button>
+                  <button id="adduser" type="submit" class="btn btn-primary">Add User</button>
                 </form>
-
               </div>
             </div>
           </div>
         </div>
+
+       <!-- Inactivate User Modal -->
+       <div class="modal fade" id="InactivateUserModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+       aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title w-100" id="ModalLabel" style="font-weight: bold">Are you sure you want to inactivate this user?</h5>
+           </div>
+           <div class="modal-body">
+             <form id="userForm">
+              <div class="form-row">
+                <div class="form-group col-md-6" style="margin: auto; padding-bottom: 16px;">
+                  <label for="startDate"><b>First Name & Last Name</b></label>
+                </div>
+              </div>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                 onclick="clearfields()">Cancel</button>
+               <button id="adduser" type="submit" class="btn btn-danger">Inactivate User</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+
+       <!-- Add Notes to User Modal -->
+       <div class="modal fade" id="AddNotesToUserModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+       aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title w-100" id="ModalLabel" style="font-weight: bold">Add Notes</h5>
+           </div>
+           <div class="modal-body">
+             <form id="userForm">
+              <div class="form-row">
+                <div class="form-group col-md-6" style="margin: auto; padding-bottom: 16px;">
+                  <label for="notesDate"><b>Date:</b></label>
+                  <input id="notesDate" class="form-control" type="date" placeholder="Date"
+                    name="notesDate" required="true">
+                </div>
+                <div class="form-group col-md-6" style="margin: auto; padding-bottom: 16px;">
+                  <label for="startDate"><b>Notes</b></label>
+                  <input id="notes" class="form-control" type="text" placeholder="Enter Notes"
+                    name="notes" required>
+                </div>
+              </div>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                 onclick="clearfields()">Cancel</button>
+               <button id="adduser" type="submit" class="btn btn-primary">Save</button>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+
 
 
         <div class="container">
@@ -117,41 +185,46 @@
                   <td>11/01/2020</td>
                   <td><img width="24px" src="././media/AdminPage/in.png" alt="ClockedIn"></td>
                   <td>9:40PM</td>
-                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
-                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
-                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
-                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
+                  <td>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNotesToUserModal"><img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#InactivateUserModal"><img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard"></button>
+                  </td>
                 </tr>
                 <tr class="">
                   <th scope="row">Kenna Groberg</th>
                   <td>11/01/2020</td>
                   <td><img width="24px" src="././media/AdminPage/out.png" alt="ClockedOut"></td>
                   <td>9:40PM</td>
-                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
-                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
-                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
-                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
-                </tr>
+                  <td>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#InactivateUserModal"><img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard"></button>
+                  </td>
                 <tr class="">
                   <th scope="row">Kenna Groberg</th>
                   <td>11/01/2020</td>
                   <td><img width="24px" src="././media/AdminPage/in.png" alt="ClockedIn"></td>
                   <td>9:40PM</td>
-                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
-                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
-                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
-                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
-                </tr>
+                  <td>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard"></button>
+                  </td>
                 <tr class="">
                   <th scope="row">Kenna Groberg</th>
                   <td>11/01/2020</td>
                   <td><img width="24px" src="././media/AdminPage/in.png" alt="ClockedIn"></td>
                   <td>9:40PM</td>
-                  <td><button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
-                  <img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard">
-                  <img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard">
-                  <img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></td>
-                </tr>
+                  <td>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="26px" src="././media/AdminPage/edit-c.svg" alt="Edit"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/timecard-c.svg" alt="Timecard"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/notes-c.svg" alt="Notes"></button>
+                    <button type="button" class="btn nopadding" data-toggle="modal" data-target="#AddNewUserModal"><img width="24px" src="././media/AdminPage/delete-c.svg" alt="Offboard"></button>
+                  </td>
               </tbody>
             </table>
           </div>

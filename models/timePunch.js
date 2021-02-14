@@ -20,7 +20,7 @@ const TimePunch = new mongoose.Schema
     },
     punchTime:{
         type: Date,
-        default: new Date
+        required: true
     }
 })
 
