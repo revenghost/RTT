@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const addUser = new Schema({
+const User = new Schema({
     firstName:{
         type: String,
         required: true,
@@ -23,7 +23,19 @@ const addUser = new Schema({
         required: true,
         min: 1000,
         max: 9999
+    },
+    agency:{
+        type: String
+    },
+    startDate:{
+        type: Date,
+        required:true
+    },
+    active:{
+        type: Boolean,
+        required: true,
+        default: true
     }
 });
 
-module.exports = mongoose.model("users", addUser);
+module.exports = mongoose.model("users", User);

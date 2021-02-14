@@ -1,3 +1,18 @@
+  /* hide mobile version by default */
+  .logo .mobile {
+    display: none;
+  }
+  /* when screen is less than 600px wide
+     show mobile version and hide desktop */
+  @media (max-width: 600px) {
+    .logo .mobile {
+      display: block;
+    }
+    .logo .desktop {
+      display: none;
+    }
+  }
+
 h1{
     color: black;
   
@@ -6,7 +21,7 @@ html, body {
     height: 100%;
     text-align: center;
     background: linear-gradient(rgb(250, 205, 205), rgb(245, 237, 163));
-    
+    background-attachment: fixed;
   }
   
   
@@ -39,6 +54,12 @@ html, body {
     color: #fff;
     transform: translateY(-1px);
   }
+
+button span{
+  line-height: 0px;
+  font-size: 50px;
+  vertical-align:-8px
+}
 
   /* autocomplete css below */
   
@@ -103,3 +124,52 @@ input[type=submit] {
   background-color: DodgerBlue !important; 
   color: #ffffff; 
 }
+
+table {
+  background-color: #ffffff;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+/* START: Timepunch Modal Styles */
+/* The Modal (background) */
+.modal-TimePunch {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content-TimePunch {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close-TimePunch {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-TimePunch:hover,
+.close-TimePunch:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* FINISH: Timepunch Modal Styles */

@@ -5,6 +5,12 @@ const API = {
         return json;
     },
 
+    async manageUsers() {
+        const res = await fetch("/api/manageusers");
+        const json = await res.json();
+        return json;
+    },
+
     
     async addPunch(data) {
         const res = await fetch("/api/punch",
@@ -26,6 +32,14 @@ const API = {
                 body: JSON.stringify(data)
             }
         );
+        const json = await res.json();
+        return json;
+    },
+
+    async searchUser(data) {
+        const res = await fetch("/api/search?" + new URLSearchParams({
+            searchterm: data
+        }));
         const json = await res.json();
         return json;
     }

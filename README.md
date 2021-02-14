@@ -52,3 +52,23 @@ view timecards
 Install: Download or clone git repository
 Install: stuff in here
 
+#### Objectives:
+ 
+Authentication for punches by name/pin (view timecard)
+Manage users list (eraser and pencil and view timecard, add note) 
+Notes Collection - Manager can add notes for temp, and temp can send note to manager
+Error handling - add new users, needs popup for wrong input
+
+Later: 
+build out Timecard (Send Note To Manager)
+LightTheme/DarkTheme (css variable)
+
+
+user model needs
+StartDate, AgencyName, Active/Inactive
+
+Admin 
+
+#### Resources
+https://www.iconfinder.com/icon-sets/featured/free
+

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 const TimePunch = new mongoose.Schema
 ({
     punchType:{
@@ -21,9 +20,8 @@ const TimePunch = new mongoose.Schema
     },
     punchTime:{
         type: Date,
-        default: new Date
+        required: true
     }
 })
 
 module.exports = mongoose.model("timePunches", TimePunch);
-
